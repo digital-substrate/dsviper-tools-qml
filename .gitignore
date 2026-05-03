@@ -1,0 +1,14 @@
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Local editor / IDE state
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Claude Code (local only, not for distribution — convention "have but don't commit")
+CLAUDE.md
+.claude/

@@ -1,0 +1,6 @@
+dsviper>=1.2.7
+
+# Qt Quick / QML. Pinned for ecosystem alignment with
+# dsviper-tools, ge-py, ge-qml, and the
+# two dsviper-components* libraries.
+PySide6==6.10.1
