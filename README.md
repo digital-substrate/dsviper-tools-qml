@@ -22,6 +22,12 @@ dsviper-tools-qml/
     └── sync_dsviper_components_qml.py
 ```
 
+## Documentation
+
+Full documentation: https://docs.digitalsubstrate.io/dsviper-tools/
+
+Part of the [DevKit ecosystem](https://docs.digitalsubstrate.io/).
+
 ## Architectural position
 
 Sits above the runtime layer. Consumes only:
