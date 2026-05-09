@@ -64,7 +64,7 @@ git commit -m "sync: bump dsviper-components-qml to vX.Y.Z"
 
 - Documentation in **English**.
 - Tag convention: `vMAJOR.MINOR.PATCH`.
-- Branches: `main` + `LTS-X.Y` aligned with the dsviper ecosystem.
+- Branches: `LTS-X.Y` is the canonical line, aligned with the dsviper ecosystem; `main` is currently a mirror of it.
 
 ## License
 
