@@ -26,6 +26,7 @@ from dsviper_components_qml.database_manager import DatabaseManager
 from dsviper_components_qml.blob_model import BlobModel
 from dsviper_components_qml.documents_panel_model import DocumentsPanelModel
 from dsviper_components_qml.license_model import LicenseModel
+from _version import __version__
 from dsviper_components_qml.about_qt_helper import AboutQtHelper
 from dsviper_components_qml.bootstrap import bootstrap_database
 
@@ -34,6 +35,7 @@ def main():
     app = QApplication(sys.argv)
     app.setOrganizationName("DigitalSubstrate")
     app.setApplicationName("DBEditor")
+    app.setApplicationVersion(__version__)
     from PySide6.QtGui import QIcon
     app.setWindowIcon(QIcon(str(Path(__file__).parent / "images" / "app_icon.png")))
     engine = QQmlApplicationEngine()
