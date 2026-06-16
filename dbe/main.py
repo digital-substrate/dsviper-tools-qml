@@ -71,7 +71,7 @@ def main():
     ctx.setContextProperty("dbManager", db_manager)
     ctx.setContextProperty("blobModel", blob_model)
     ctx.setContextProperty("inspectModel", inspect_model)
-    license_model = LicenseModel("Database Editor", "Database Editor for Digital Substrate databases")
+    license_model = LicenseModel("Database Editor", "Database Editor for Digital Substrate databases", version=__version__)
     ctx.setContextProperty("licenseModel", license_model)
     about_qt_helper = AboutQtHelper()
     ctx.setContextProperty("aboutQtHelper", about_qt_helper)

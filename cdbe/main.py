@@ -57,7 +57,7 @@ def main():
     # Expose to QML
     ctx = engine.rootContext()
     ctx.setContextProperty("storeMgr", mgr)
-    license_model = LicenseModel("CDB Editor", "Commit Database Editor for Digital Substrate databases")
+    license_model = LicenseModel("CDB Editor", "Commit Database Editor for Digital Substrate databases", version=__version__)
     ctx.setContextProperty("licenseModel", license_model)
     about_qt_helper = AboutQtHelper()
     ctx.setContextProperty("aboutQtHelper", about_qt_helper)
