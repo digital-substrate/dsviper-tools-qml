@@ -15,7 +15,7 @@ Use [GitHub Issues](https://github.com/digital-substrate/dsviper-tools-qml/issue
 
 ## Running locally
 
-Requires Python 3.14+ and PySide6 with QML support.
+Requires Python 3.10-3.14 and PySide6 with QML support.
 
 ```bash
 pip install -r requirements.txt          # PySide6 and deps
