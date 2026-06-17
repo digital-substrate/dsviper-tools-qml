@@ -14,6 +14,6 @@ First standalone release of the Database / CommitDatabase tooling (QML port).
 
 ### Added
 - QML GUI tools (`cdbe`, `dbe`) around a Database / CommitDatabase.
-- Runs on Python 3.10–3.14.
+- Runs on Python 3.10–3.14; requires dsviper >= 1.2.16.
 - Independent version line (`_version.py`), reported via the application
   version and the About panel, decoupled from the `dsviper` runtime.
