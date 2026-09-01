@@ -40,7 +40,7 @@ class FlatNode:
 class BaseDocumentModel(QAbstractItemModel):
     """Tree model built from dsviper DocumentNode.create_documents().
 
-    4 columns: Component, Value, Path, Type — matching ge-py QTreeWidget.
+    4 columns: Component, Value, Path, Type — matching dsviper-ge QTreeWidget.
     TreeView handles expand/collapse natively.
 
     Subclasses must implement:
@@ -570,7 +570,7 @@ class BaseDocumentModel(QAbstractItemModel):
     def _parse_value(self, node, text: str):
         """Parse text to a typed dsviper Value using try_parse.
 
-        Transposition of ge-py DSDocuments._value_from_representation.
+        Transposition of dsviper-ge DSDocuments._value_from_representation.
         Returns a Value or raises ValueError if invalid.
         """
         from dsviper import (

@@ -8,7 +8,7 @@ Run from the repo root:
 
     python3 cdbe.py [database.cdb]
 
-Mirrors the graph_editor.py shim in ge-qml.
+Mirrors the graph_editor.py shim in dsviper-ge-qml.
 """
 from __future__ import annotations
 

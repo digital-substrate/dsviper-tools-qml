@@ -48,14 +48,14 @@ class DocumentsController(QObject):
             self._nav_controller.reset()
             self._document_model.clear()
             self._key_model.setAbstraction(atype)
-            # Auto-select first key (like ge-py _abstraction_selection_changed)
+            # Auto-select first key (like dsviper-ge _abstraction_selection_changed)
             first_key = self._key_model.key_at(0)
             if first_key:
                 self._key_model.selectKey(first_key)
                 self._document_model.setKey(first_key, self._key_model.attachments_for_key(first_key))
 
     def _on_database_opened(self):
-        """Auto-select first abstraction + first key on open (like ge-py)."""
+        """Auto-select first abstraction + first key on open (like dsviper-ge)."""
         from PySide6.QtCore import QTimer
         def _auto_select():
             if self._abstraction_model.rowCount() > 0:
@@ -68,7 +68,7 @@ class DocumentsController(QObject):
             self._document_model.setKey(key, self._key_model.attachments_for_key(key))
 
     def _navigate_to_key(self, key):
-        # Preserve attachment+path if navigating to same type_key (like ge-py _set_key)
+        # Preserve attachment+path if navigating to same type_key (like dsviper-ge _set_key)
         current_key = self._document_model._current_key
         if (current_key and self._document_model._current_attachment
                 and self._document_model._current_path

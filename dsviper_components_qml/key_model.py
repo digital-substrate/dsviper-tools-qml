@@ -65,7 +65,7 @@ class KeyModel(QAbstractTableModel):
     def attachments_for_key(self, key) -> list:
         """Return all attachments for all forms of key in the hierarchy.
 
-        Transposition of ge-py DSDocumentsBuilder: ValueKey.keys(key) iterates
+        Transposition of dsviper-ge DSDocumentsBuilder: ValueKey.keys(key) iterates
         all key forms (e.g. LightSky + Light), then for each form finds
         attachments with matching type_key that have a document for that key.
         """
@@ -211,7 +211,7 @@ class KeyModel(QAbstractTableModel):
         from dsviper import TypeKey, TypeSet, ValueKey, ValueSet, KeyHelper
 
         try:
-            # Collect keys — exact match on type_key, like ge-py
+            # Collect keys — exact match on type_key, like dsviper-ge
             type_key = TypeKey(self._current_abstraction)
             keys = ValueSet(TypeSet(type_key))
             self._attachments = []
@@ -237,7 +237,7 @@ class KeyModel(QAbstractTableModel):
             self._items = items
             self.endResetModel()
 
-            # Restore visual selection (like ge-py _update_key_selection)
+            # Restore visual selection (like dsviper-ge _update_key_selection)
             if self._selected_key_id:
                 for i, (k, instance_id, _) in enumerate(items):
                     if instance_id == self._selected_key_id:
