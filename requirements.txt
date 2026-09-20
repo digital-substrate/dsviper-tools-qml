@@ -1,4 +1,4 @@
-dsviper>=1.2.23
+dsviper>=1.2.23,<2
 
 # Qt Quick / QML. Pinned for ecosystem alignment with
 # dsviper-tools, dsviper-ge, dsviper-ge-qml, and the
