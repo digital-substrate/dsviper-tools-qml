@@ -58,7 +58,8 @@ def resolve_source() -> Path:
         "error: cannot resolve dsviper-components-qml source. "
         "Either checkout dsviper-components-qml alongside this repo "
         "(github.com/digital-substrate/dsviper-components-qml), set "
-        "$DSVIPER_COMPONENTS_QML, or pip install dsviper-components-qml."
+        "$DSVIPER_COMPONENTS_QML, or install it from a "
+        "checkout (pip install ./dsviper-components-qml) -- it is not on PyPI."
     )
 
 
