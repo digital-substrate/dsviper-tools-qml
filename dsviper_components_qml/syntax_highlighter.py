@@ -93,9 +93,9 @@ _VIPER_TYPES = [
     'CommitOpcodeSetSubtract', 'CommitOpcodeSetUnion',
     'CommitOpcodeXArrayInsert', 'CommitOpcodeXArrayRemove', 'CommitOpcodeXArrayUpdate',
     # Attachment
-    'Attachment', 'AttachmentGetting', 'AttachmentMutating',
+    'Attachment', 'AttachmentGetting', 'CommitAttachmentMutating',
     'AttachmentFunctionPool', 'AttachmentFunctionPoolFunctions',
-    'AttachmentGettingFunction', 'AttachmentMutatingFunction',
+    'AttachmentGettingFunction', 'CommitAttachmentMutatingFunction',
     # Definitions
     'Definitions', 'DefinitionsConst', 'DefinitionsInspector',
     'DefinitionsExtendInfo', 'DefinitionsCollector', 'DefinitionsMapper',
