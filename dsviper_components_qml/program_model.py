@@ -10,11 +10,11 @@ from PySide6.QtCore import (
 )
 
 from dsviper import (
-    Html, ValueOpcode,
-    ValueOpcodeDocumentSet, ValueOpcodeDocumentUpdate,
-    ValueOpcodeSetUnion, ValueOpcodeSetSubtract,
-    ValueOpcodeMapUnion, ValueOpcodeMapSubtract, ValueOpcodeMapUpdate,
-    ValueOpcodeXArrayInsert, ValueOpcodeXArrayRemove, ValueOpcodeXArrayUpdate,
+    Html, CommitOpcode,
+    CommitOpcodeDocumentSet, CommitOpcodeDocumentUpdate,
+    CommitOpcodeSetUnion, CommitOpcodeSetSubtract,
+    CommitOpcodeMapUnion, CommitOpcodeMapSubtract, CommitOpcodeMapUpdate,
+    CommitOpcodeXArrayInsert, CommitOpcodeXArrayRemove, CommitOpcodeXArrayUpdate,
 )
 
 
@@ -31,7 +31,7 @@ class ProgramModel(QAbstractTableModel):
     def __init__(self, parent=None):
         super().__init__(parent)
         self._store = None
-        self._opcodes: list[ValueOpcode] = []
+        self._opcodes: list[CommitOpcode] = []
         self._rows: list[dict] = []  # pre-computed row data
 
         # Header info
@@ -175,18 +175,18 @@ class ProgramModel(QAbstractTableModel):
         str_type = opcode.type()
 
         str_path = "-"
-        if isinstance(opcode, (ValueOpcodeDocumentUpdate,
-                               ValueOpcodeSetUnion, ValueOpcodeSetSubtract,
-                               ValueOpcodeMapUnion, ValueOpcodeMapSubtract, ValueOpcodeMapUpdate,
-                               ValueOpcodeXArrayInsert, ValueOpcodeXArrayRemove, ValueOpcodeXArrayUpdate)):
+        if isinstance(opcode, (CommitOpcodeDocumentUpdate,
+                               CommitOpcodeSetUnion, CommitOpcodeSetSubtract,
+                               CommitOpcodeMapUnion, CommitOpcodeMapSubtract, CommitOpcodeMapUpdate,
+                               CommitOpcodeXArrayInsert, CommitOpcodeXArrayRemove, CommitOpcodeXArrayUpdate)):
             str_path = opcode.path().representation()
 
         str_pos = "-"
-        if isinstance(opcode, (ValueOpcodeXArrayInsert, ValueOpcodeXArrayRemove, ValueOpcodeXArrayUpdate)):
+        if isinstance(opcode, (CommitOpcodeXArrayInsert, CommitOpcodeXArrayRemove, CommitOpcodeXArrayUpdate)):
             str_pos = opcode.position().encoded()
 
         str_bpos = "-"
-        if isinstance(opcode, ValueOpcodeXArrayInsert):
+        if isinstance(opcode, CommitOpcodeXArrayInsert):
             str_bpos = opcode.before_position().encoded()
 
         return {
@@ -208,10 +208,10 @@ class ProgramModel(QAbstractTableModel):
 
         opcode = self._opcodes[row]
         value = None
-        if isinstance(opcode, (ValueOpcodeDocumentSet, ValueOpcodeDocumentUpdate,
-                               ValueOpcodeSetUnion, ValueOpcodeSetSubtract,
-                               ValueOpcodeMapUnion, ValueOpcodeMapSubtract, ValueOpcodeMapUpdate,
-                               ValueOpcodeXArrayUpdate)):
+        if isinstance(opcode, (CommitOpcodeDocumentSet, CommitOpcodeDocumentUpdate,
+                               CommitOpcodeSetUnion, CommitOpcodeSetSubtract,
+                               CommitOpcodeMapUnion, CommitOpcodeMapSubtract, CommitOpcodeMapUpdate,
+                               CommitOpcodeXArrayUpdate)):
             value = opcode.value()
 
         if value:
